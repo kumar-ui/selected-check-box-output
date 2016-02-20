@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>kumar-test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="selecteOutput.css">
+  </head>
+  <body>
+
+
+
+  <div class="container">
+      <div class="searchFilter"> 
+
+        <div data-toggle="collapse" data-target="#os" id="lable" class="lable p"> <span></span> <h4> Simple Operating System </h4> </div>
+        
+        <div id="os" class="collapse">
+          <ul>
+            <li> <input type="checkbox" name="Windows" value="Windows"> Windows </input> </li>
+            <li> <input type="checkbox" name="Linux" value="Linux"> Linux </input> </li>
+            <li> <input type="checkbox" name="Macintosh" value="Macintosh"> Macintosh </input> </li>
+          </ul>
+        </div>
+
+        <div data-toggle="collapse" data-target="#pro" id="lable" class="lable p"> <span></span> <h4> Processor </h4> </div>
+        
+        <div id="pro" class="collapse">
+          <ul>
+            <li> <input type="checkbox" name="AMD" value="Windows"> AMD </input> </li>
+            <li> <input type="checkbox" name="Intel" value="Linux"> Intel </input> </li>
+          </ul>
+        </div>  
+
+        <div data-toggle="collapse" data-target="#hd" id="lable" class="lable p"> <span></span> <h4> Hard Disk</h4> </div>
+        
+        <div id="hd" class="collapse">
+          <ul>
+            <li> <input type="checkbox" name="250 GB" value="Windows"> 250 GB </input> </li>
+            <li> <input type="checkbox" name="500 GB" value="Linux"> 500 GB </input> </li>
+            <li> <input type="checkbox" name="1 TB" value="Macintosh"> 1 TB </input> </li>
+          </ul>
+        </div>  
+
+
+        <div data-toggle="collapse" data-target="#ram" id="lable" class="lable p"> <span></span> <h4> RAM </h4> </div>
+        
+        <div id="ram" class="collapse">
+          <ul>
+            <li> <input type="checkbox" name="2 GB" value="Windows"> 2 GB </input> </li>
+            <li> <input type="checkbox" name="4 GB" value="Linux"> 4 GB </input> </li>
+            <li> <input type="checkbox" name="8 GB" value="Macintosh"> 8 GB </input> </li>
+          </ul>
+        </div>       
+
+        <div class="text-center">          
+
+          <button type="button"  id='submit'  class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit</button>
+
+            <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  
+                  <h4 class="modal-title">Modal Header</h4>  
+
+                  <span><a href="">NO</a></span><span><a href="">YES</a></span>
+                </div>      
+              </div>
+            </div> 
+        </div> 
+      </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>  
+    <script type="text/javascript"  src="selecteOutput.js"></script>
+  </body>
+</html>
