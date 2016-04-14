@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>kumar-test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <style type="text/css">
+
+      .searchFilter{
+        width: 32%;
+        height: auto;
+        margin: 100px auto;
+        padding: 20px;
+         box-sizing: border-box;
+         overflow: hidden;
+        border: 2px solid #999;
+      }
+
+      #lable span{
+        height: 25px;
+        width: 25px;
+        display: inline-block;
+        background: url("p.png")no-repeat;
+        background-size: 80%;
+        float: left;
+      }
+      #lable h4{
+        line-height: 1.5;
+        margin-left: 33px;
+      }
+
+      .searchFilter ul li{
+        list-style: none;
+      }
+
+      .searchFilter button{
+        width: 32%;
+        margin: 10px auto;
+      }
+
+      input[type=checkbox]{
+          background: url("lable.png") -24px -73px no-repeat; 
+       }
+
+
+      #myModal{
+        padding: 20px;
+      }
+
+      .lable i, .lable h4{ display: inline-block; }
+
+    </style>
+
+  </head>
+  <body>
+
+
+
+  <div class="container">
+      <div class="searchFilter"> 
+
+        <div data-toggle="collapse" data-target="#os" id="lable" class="lable p"> <i class="fa fa-plus" aria-hidden="true"></i> <h4> Simple Operating System </h4> </div>
+        
+        <div id="os" class="collapse">
+          <ul>
+            <li> <input type="checkbox" name="Windows" value="Windows"  id="l1" /> <label for="l1" >Windows</label> </li>
+            <li> <input type="checkbox" name="Linux" value="Linux" id="l2" /> <label for="l2"> Linux </label> </li>
+            <li> <input type="checkbox" name="Macintosh" value="Macintosh" id="l3" /> <label for="l3"> Macintosh </label></li>
+          </ul>
+        </div>
+
+        <div data-toggle="collapse" data-target="#pro" id="lable" class="lable p"> <i class="fa fa-plus" aria-hidden="true"></i> <h4> Processor </h4> </div>
+        
+        <div id="pro" class="collapse">
+          <ul>
+            <li> <input type="checkbox" name="AMD" value="Windows" id="l4" /> <label for="l4"> AMD </label> </li>
+            <li> <input type="checkbox" name="Intel" value="Linux" id="l5" /> <label for="l5"> Intel </label> </li>
+          </ul>
+        </div>  
+
+        <div data-toggle="collapse" data-target="#hd" id="lable" class="lable p"> <i class="fa fa-plus" aria-hidden="true"></i> <h4> Hard Disk</h4> </div>
+        
+        <div id="hd" class="collapse">
+          <ul>
+            <li> <input type="checkbox" name="250 GB" value="Windows" id="l6"/> <label for="l6" >250 GB</label> </li>
+            <li> <input type="checkbox" name="500 GB" value="Linux" id="l7"/> <label for="l7"> 500 GB </label> </li>
+            <li> <input type="checkbox" name="1 TB" value="Macintosh" id="l8"/> <label for="l8"> 1 TB </label> </li>
+          </ul>
+        </div>  
+
+
+        <div data-toggle="collapse" data-target="#ram" id="lable" class="lable p"> <i class="fa fa-plus" aria-hidden="true"></i> <h4> RAM </h4> </div>
+        
+        <div id="ram" class="collapse">
+          <ul>
+            <li> <input type="checkbox" name="2 GB" value="Windows" id="l9"/> <label for="l9"> 2 GB </label> </li>
+            <li> <input type="checkbox" name="4 GB" value="Linux" id="l10"/> <label for="l10"> 4 GB </label> </li>
+            <li> <input type="checkbox" name="8 GB" value="Macintosh" id="l11"/> <label for="l11"> 8 GB </label> </li>
+          </ul>
+        </div>       
+
+        <div class="text-center">          
+
+          <button type="button"  id='submit'  class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit</button>
+
+            <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  
+                  <h4 class="modal-title">Modal Header</h4>  
+
+                  <span><a href="">NO</a></span><span><a href="">YES</a></span>
+                </div>      
+              </div>
+            </div>
+
+        </div>
+
+
+
+
+
+      </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>  
+
+    <script type="text/javascript" >
+      
+       $(".p").click(function(){
+  
+      var span = $(this).children('span');
+
+      var $i = $(this).children('i');
+
+      $($i).toggleClass( 'fa-minus').toggleClass( 'fa-plus'); 
+
+      });
+
+
+
+      $('#submit').click(function(){
+        console.log('hi');
+
+        var selected = [];
+        $('#os input:checked').each(function() {
+            selected.push($(this).attr('name'));
+        });
+
+        var selected1 = [];
+        $('#pro input:checked').each(function() {
+            selected1.push($(this).attr('name'));
+        });
+
+        var selected2 = [];
+        $('#hd input:checked').each(function() {
+            selected2.push($(this).attr('name'));
+        });
+
+        var selected3 = [];
+        $('#ram input:checked').each(function() {
+            selected3.push($(this).attr('name'));
+        });
+
+        console.log(selected);
+
+        $(".modal-content").html( 
+
+          '<p> Your selected filter options </p>' + '<span> Operation System : </span>' + selected + '<br>'
+
+          + '<span> Processor : </span>' + selected1 + '<br>'
+
+          + '<span> Hard Disk : </span>' + selected2 + '<br>'
+
+          + '<span> RAM : </span>' + selected3
+
+          );
+
+      });
+
+
+    </script>
+  </body> 
+</html>
